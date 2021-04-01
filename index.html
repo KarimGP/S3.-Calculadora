@@ -3,23 +3,52 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
-    <script type="text/javascript" src="calculadora.js"></script>
+    <link rel="stylesheet" href="calculadora.css">
+    <title>Document</title>
 </head>
 
 <body>
-    <form>
-        Número 1: <input id="valor1" type="number" />
-        Número 2: <input id="valor2" type="number" />
-        <p id="resultado" style="color: green;"></p>
-        <br /><br />
-        <input type="button" value="SUMAR" onclick="operacions('sumar'); return false;" /><br />
-        <input type="button" value="RESTAR" onclick="operacions('restar'); return false;" /><br />
-        <input type="button" value="MULTIPLICAR" onclick="operacions('multiplicar'); return false;" /><br />
-        <input type="button" value="DIVIDIR" onclick="operacions('dividir'); return false;" />
-    </form>
+    <div class="micalculadora">
+        <!--Realizamos caja calculadora con todos los botones, de momento inoperables hasta que 
+    se formulen las funciones en javascript para ejecutar los cambios que solicitemos
+    en cada acción. Por último le daremos apariencia con css-->
+        <form name="calculadora" id="calculadora">
+            <input type="text" name="display" id="display">
+            <div>
+                <input type="button" id="uno" value="1" onclick="valor(document.getElementById('uno').value)">
+                <input type="button" id="dos" value="2" onclick="valor(document.getElementById('dos').value)">
+                <input type="button" id="tres" value="3" onclick="valor(document.getElementById('tres').value)">
+                <input type="button" id="suma" value="+" onclick="valor(document.getElementById('suma').value)">
+            </div>
+            <div>
+                <input type="button" id="cuatro" value="4" onclick="valor(document.getElementById('cuatro').value)">
+                <input type="button" id="cinco" value="5" onclick="valor(document.getElementById('cinco').value)">
+                <input type="button" id="seis" value="6" onclick="valor(document.getElementById('seis').value)">
+                <input type="button" id="resta" value="-" onclick="valor(document.getElementById('resta').value)">
+            </div>
+            <div>
+                <input type="button" id="siete" value="7" onclick="valor(document.getElementById('siete').value)">
+                <input type="button" id="ocho" value="8" onclick="valor(document.getElementById('ocho').value)">
+                <input type="button" id="nueve" value="9" onclick="valor(document.getElementById('nueve').value)">
+                <input type="button" id="mult" value="*" onclick="valor(document.getElementById('mult').value)">
+            </div>
+            <div>
+                <input type="button" id="cero" value="0" onclick="valor(document.getElementById('cero').value)">
+                <input type="button" id="decimal" value="." onclick="valor(document.getElementById('decimal').value)">
+                <input type="button" id="igual" value="="
+                    onclick="cal_resultado(document.getElementById('igual').value)">
+                <input type="button" id="div" value="/" onclick="valor(document.getElementById('div').value)">
+            </div>
+            <div class="resultado">
+                <button type="button" id="borrar" value=""
+                    onclick="borrardisplay(document.getElementById('borrar').value)">BORRAR</button>
+            </div>
+        </form>
+
+    </div>
+
+    <script src="calculadora.js"></script>
 </body>
 
 </html>

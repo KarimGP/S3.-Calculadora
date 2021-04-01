@@ -2,19 +2,19 @@
 function operacions(op) {
 
     const ops = {
-        sumar: function sumarNumeros(n1, n2) {
+        suma: function sumarNumeros(n1, n2) {
             return (parseFloat(n1) + parseFloat(n2));
         },
 
-        restar: function restarNumeros(n1, n2) {
+        resta: function restarNumeros(n1, n2) {
             return (parseFloat(n1) - parseFloat(n2));
         },
 
-        multiplicar: function multiplicarNumeros(n1, n2) {
+        mult: function multiplicarNumeros(n1, n2) {
             return (parseFloat(n1) * parseFloat(n2));
         },
 
-        dividir: function dividirNumeros(n1, n2) {
+        div: function dividirNumeros(n1, n2) {
             return (parseFloat(n1) / parseFloat(n2));
         }
 
@@ -36,20 +36,20 @@ function operacions(op) {
     else {
         //Si se han introducido los números en ámbas cajas, operamos:
         switch (op) {
-            case 'sumar':
-                var resultado = ops.sumar(valor1, valor2);
+            case 'suma':
+                var resultado = ops.suma(valor1, valor2);
                 document.getElementById('resultado').innerHTML = "<span style='color: green;'>" + resultado + "</span>";
                 break;
-            case 'restar':
-                var resultado = ops.restar(valor1, valor2);
+            case 'resta':
+                var resultado = ops.resta(valor1, valor2);
                 document.getElementById('resultado').innerHTML = "<span style='color: green;'>" + resultado + "</span>";
                 break;
-            case 'multiplicar':
-                var resultado = ops.multiplicar(valor1, valor2);
+            case 'mult':
+                var resultado = ops.mult(valor1, valor2);
                 document.getElementById('resultado').innerHTML = "<span style='color: green;'>" + resultado + "</span>";
                 break;
-            case 'dividir':
-                var resultado = ops.dividir(valor1, valor2);
+            case 'div':
+                var resultado = ops.div(valor1, valor2);
                 document.getElementById('resultado').innerHTML = "<span style='color: green;'>" + resultado + "</span>";
                 break;
         }
