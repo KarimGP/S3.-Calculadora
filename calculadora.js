@@ -1,57 +1,25 @@
-//Declaramos las operaciones en una función
-function operacions(op) {
+/* Para ejecutar y ver los cambios sobre el documento html cada vez que necesitemos operar
+vamos a utilizar la orden getElementById para que cada vez que nos posicionemos y cliquemos
+sobre el elemento operable, éste sea reconocido por la función y ejecute la acción programada.
+En este caso se opta por la opción de adicionar la operación marcada con += sobre el valor indicado
+previamente con el getElem... al siguiente valor también indicado con getElem...*/
 
-    const ops = {
-        suma: function sumarNumeros(n1, n2) {
-            return (parseFloat(n1) + parseFloat(n2));
-        },
+function valor (x) {
+    document.getElementById('display').value += x;
+}
 
-        resta: function restarNumeros(n1, n2) {
-            return (parseFloat(n1) - parseFloat(n2));
-        },
+/* Ejecutamos de la misma manera que en la función valor, pero para evitar añadir "nada" a lo que ya tenemos 
+en el display y conseguir que lo que hay en el display se sustituya realmente por "nada", insertamos un valor 
+diferente a x (y) que valga "nada" y así dejamos el display en blanco */ 
 
-        mult: function multiplicarNumeros(n1, n2) {
-            return (parseFloat(n1) * parseFloat(n2));
-        },
+function borrardisplay (y) {
+    document.getElementById('display').value = y;
+}
 
-        div: function dividirNumeros(n1, n2) {
-            return (parseFloat(n1) / parseFloat(n2));
-        }
+/* Para conseguir el resultado utilizamos la función eval, la cual ejecuta la instrucción que se le pasa 
+visualizada en el display y escribirá el resultado allá donde le digamos, en este caso el mismo display */
 
-    };
-
-    let valor1 = document.getElementById("valor1").value;
-    let valor2 = document.getElementById("valor2").value;
-
-    //Comprobamos si se ha introducido números en las cajas
-    if (isNaN(parseFloat(document.getElementById('valor1').value))) {
-        document.getElementById('resultado').innerHTML = "<span style='color: red;'>Por favor, escriba un número 1</span>";
-        document.getElementById("valor1").innerText = "0";
-        document.getElementById("valor1").focus();
-    } else if (isNaN(parseFloat(document.getElementById('valor2').value))) {
-        document.getElementById('resultado').innerHTML = "<span style='color: red;'>Por favor, escriba un número 2</span>";
-        document.getElementById("valor2").innerText = "0";
-        document.getElementById("valor2").focus();
-    }
-    else {
-        //Si se han introducido los números en ámbas cajas, operamos:
-        switch (op) {
-            case 'suma':
-                var resultado = ops.suma(valor1, valor2);
-                document.getElementById('resultado').innerHTML = "<span style='color: green;'>" + resultado + "</span>";
-                break;
-            case 'resta':
-                var resultado = ops.resta(valor1, valor2);
-                document.getElementById('resultado').innerHTML = "<span style='color: green;'>" + resultado + "</span>";
-                break;
-            case 'mult':
-                var resultado = ops.mult(valor1, valor2);
-                document.getElementById('resultado').innerHTML = "<span style='color: green;'>" + resultado + "</span>";
-                break;
-            case 'div':
-                var resultado = ops.div(valor1, valor2);
-                document.getElementById('resultado').innerHTML = "<span style='color: green;'>" + resultado + "</span>";
-                break;
-        }
-    }
+function cal_resultado () {
+    let result = eval(document.getElementById('display').value);
+    document.getElementById('display').value = result;
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="calculadora.css">
-    <title>Document</title>
+    <title>Calculadora</title>
 </head>
 
 <body>
@@ -36,13 +36,11 @@
             <div>
                 <input type="button" id="cero" value="0" onclick="valor(document.getElementById('cero').value)">
                 <input type="button" id="decimal" value="." onclick="valor(document.getElementById('decimal').value)">
-                <input type="button" id="igual" value="="
-                    onclick="cal_resultado(document.getElementById('igual').value)">
+                <input type="button" id="igual" value="=" onclick="cal_resultado(document.getElementById('igual').value)">
                 <input type="button" id="div" value="/" onclick="valor(document.getElementById('div').value)">
             </div>
             <div class="resultado">
-                <button type="button" id="borrar" value=""
-                    onclick="borrardisplay(document.getElementById('borrar').value)">BORRAR</button>
+                <button type="button" id="borrar" value="" onclick="borrardisplay(document.getElementById('borrar').value)">BORRAR</button>
             </div>
         </form>
 
